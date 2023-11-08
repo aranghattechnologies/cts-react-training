@@ -6,6 +6,7 @@ import { set } from 'react-hook-form';
 import ToDoItem from './ToDoItem';
 import { StatusComponent } from './Status';
 import Status2Component from './Status2';
+import FavQuotes from './FavQuotes';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     <div className='container'>
         <div className='row'>
             <div className='col'>
-               <h1>My To Do List</h1>
+               {/* <h1>My To Do List</h1>
                <div className='card'>
                   <div className='card-header'>
                       <div className='input-group'>
@@ -53,9 +54,10 @@ function App() {
                </div>
                <div className='card-footer'>
                   {/* <StatusComponent items={toDoItems} /> */}
-                  <Status2Component items={toDoItems} />
+                  {/* <Status2Component items={toDoItems} />
                </div>
-               </div>
+               </div>  */}
+               <FavQuotes />
             </div>
         </div>
     </div>
