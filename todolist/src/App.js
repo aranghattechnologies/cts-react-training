@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { set } from 'react-hook-form';
 import ToDoItem from './ToDoItem';
 import { StatusComponent } from './Status';
+import Status2Component from './Status2';
 
 function App() {
 
@@ -51,7 +52,8 @@ function App() {
                   </ul>
                </div>
                <div className='card-footer'>
-                  <StatusComponent items={toDoItems} />
+                  {/* <StatusComponent items={toDoItems} /> */}
+                  <Status2Component items={toDoItems} />
                </div>
                </div>
             </div>
