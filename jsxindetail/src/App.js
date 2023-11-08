@@ -1,29 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-import NewsType from './NewsTypes';
-import { NewsArticle } from './NewsArticle';
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-       <NewsType title="Politics" >
-          <NewsArticle title="Election in XYZ State" snapshot="Election Declared in XYZ State"></NewsArticle>
-          <hr />
-          <NewsArticle title="Election in ABC State" snapshot="Election Declared in ABC State"></NewsArticle>
-          <NewsArticle title="Election in PQR State" snapshot="Election Declared in PQR State"></NewsArticle>
-       </NewsType>
-       <NewsType title="Sports">
-          <NewsArticle title="Cricket" snapshot="Cricket is a game"></NewsArticle>
-          <NewsArticle title="Football" snapshot="Football is a game"></NewsArticle>
-          <NewsArticle title="Hockey" snapshot="Hockey is a game"></NewsArticle>
-       </NewsType>
-      <NewsType title="Technology" isSubscribed={true}>
-          <NewsArticle title="React" snapshot="React is a JS library"></NewsArticle>
-          <NewsArticle title="Angular" snapshot="Angular is a JS framework"></NewsArticle>
-          <NewsArticle title="Vue" snapshot="Vue is a JS framework"></NewsArticle>
-      </NewsType>
-    </div>
-  );
+export default function App() {
+
+    //state = [variable, function]
+    let [greetings,setGreetings] = useState("Hello World");
+    let [count,setCount] = useState(0);
+    let [currentMessage,setCurrentMessage] = useState("");
+    let [message,setMessage] = useState([]);
+
+    function handleOnClick(){
+        //updating the state though the function
+        setGreetings(greetings.toUpperCase());
+       // alert(greetings);
+
+        if(currentMessage.length === 0)
+        {
+            alert("Please enter a message");
+            return;
+        }
+
+        setMessage([...message,{ ToDo : currentMessage, IsCompleted : false}]);
+        setCurrentMessage("");
+    }
+
+    return(
+    <>
+        {greetings}
+        <hr />
+        <h1>Todays Messages</h1>
+        {
+            message.map((msg,index) => <span><p>{msg.ToDo}</p>{msg.IsCompleted ? "Completed" : "Pending"}</span>)
+        }
+        <hr />
+        <input type="text" value={currentMessage} onChange={(e) => setCurrentMessage(e.target.value)} />
+        <button onClick={handleOnClick}>Click Me</button>  
+    </>
+    )
 }
-
-export default App;
