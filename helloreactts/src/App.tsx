@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import TestComponent from './TestComponent';
 import { TestComponentProps } from './TestComponentProps';
+import EmployeeRegistration from './EmployeeRegistration';
 
 function App() {
 
@@ -10,11 +11,13 @@ function App() {
 
   return (
     <div className="App">
-      <input type='text' value={state.title} onChange={(e)=>setState({...state,title : e.target.value})} />
+      {/* <input type='text' value={state.title} onChange={(e)=>setState({...state,title : e.target.value})} />
       <input type='color' value={state.color} onChange={(e) => setState({...state,color : e.target.value})} />
       <input type='checkbox' checked={state.isupperCase} onChange={(e) => setState({...state,isupperCase : e.target.checked})} />
       <TestComponent title={state.title} isupperCase={state.isupperCase} color={state.color} />
-      <TestComponent {...state} />
+      <TestComponent {...state} /> */}
+
+      <EmployeeRegistration />
     </div>
   );
 }
