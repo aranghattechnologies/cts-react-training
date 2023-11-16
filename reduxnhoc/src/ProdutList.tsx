@@ -1,33 +1,41 @@
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "./state/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "./state/store";
 import { addItemToCart } from "./state/cartSlice";
+import { Product, fetchProductsAsync } from "./state/productSlice";
+import { useEffect } from "react";
 
 export default function ProductList() {
 
     let dispacher = useDispatch<AppDispatch>();
+    let products = useSelector((state:RootState) => state.products).products;
 
-    let products = [
-        { id: 1, name: 'Apple', price: 100 },
-        { id: 2, name: 'Banana', price: 200 },
-        { id: 3, name: 'Cherry', price: 300 },
-    ];
-    
+    useEffect(() => {
+        dispacher(fetchProductsAsync())
+    },[]);
+
+
     function onAddToCart(product: any) {
-        dispacher(addItemToCart({id: product.id, name: product.name, price: product.price, quantity: 1}))
+        dispacher(addItemToCart({ id: product.id, name: product.name, price: product.price, quantity: 1 }))
     }
 
     return (
         <>
-            {products.map((product) => <div>
-                    <h2>{product.name}</h2>
-                    <h3>{product.price}</h3>
-                    <select>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <button type="button" onClick={() => onAddToCart(product)}>Add to cart</button>
+            {products.map((product:Product) => <div className="card my-3">
+                <img src={product.thumbnail} className="card-img-top" alt="..." />
+                <div className="card-body">
+
+                    <div className="row">
+                        <div className="col">
+                            <h2>{product.title}</h2>
+                        </div>
+                        </div>
+                        <div className="row">
+                           <div className="col">
+                           <p>{product.description}</p>
+                           </div>
+                        </div>
                 </div>
+            </div>
             )}
         </>
     )

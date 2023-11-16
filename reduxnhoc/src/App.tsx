@@ -20,10 +20,10 @@ function App() {
   return (
     <div className="App">
       <TopNavBar />
-      <div className='container-fluid'>
-        <div className='row'>
+      <div className='container-fluid '>
+        <div className='row vh-100'>
           <div className='col'><ProductList /></div>
-          <div className='col bg-light'> <CartItems /></div>
+          <div className='col bg-light h-100'> <CartItems /></div>
         </div>
       </div>
       

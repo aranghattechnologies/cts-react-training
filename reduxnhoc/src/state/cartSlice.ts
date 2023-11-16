@@ -30,9 +30,15 @@ const cartSlice = createSlice({
                 console.log("New Item");
                 state.items = [...state.items, item];
             }
+        },
+        removeFromCart(state, action) {
+            var productId = action.payload;
+            var newCart = state.items.filter((d) => d.id !== productId);
+
+            state.items = newCart;
         }
     }
 });
 
-export const { addItemToCart } = cartSlice.actions;
+export const { addItemToCart,removeFromCart} = cartSlice.actions;
 export default cartSlice.reducer;
