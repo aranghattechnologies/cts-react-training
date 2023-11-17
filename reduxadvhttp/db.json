@@ -1,3 +1,183 @@
 {
-   "todo" : []
+  "todo": [
+    {
+      "name": "werew",
+      "done": false,
+      "id": 1
+    }
+  ],
+  "logs": [
+    {
+      "date": "2023-11-17T11:10:19.236Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "id": 1
+    },
+    {
+      "date": "2023-11-17T11:10:19.253Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [],
+      "id": 2
+    },
+    {
+      "date": "2023-11-17T11:10:30.282Z",
+      "action": "ADD_TODO_ITEM",
+      "payload": {
+        "name": "Learn Aws",
+        "done": false,
+        "id": 0
+      },
+      "id": 3
+    },
+    {
+      "date": "2023-11-17T11:10:30.300Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "id": 4
+    },
+    {
+      "date": "2023-11-17T11:11:09.416Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "id": 5
+    },
+    {
+      "date": "2023-11-17T11:11:09.432Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "Learn Aws",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 6
+    },
+    {
+      "date": "2023-11-17T11:11:11.730Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "id": 7
+    },
+    {
+      "date": "2023-11-17T11:11:11.746Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "Learn Aws",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 8
+    },
+    {
+      "date": "2023-11-17T11:11:40.342Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "payload": "",
+      "id": 9
+    },
+    {
+      "date": "2023-11-17T11:11:40.362Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "Learn Aws",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 10
+    },
+    {
+      "date": "2023-11-17T11:11:42.340Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "payload": "No Payload",
+      "id": 11
+    },
+    {
+      "date": "2023-11-17T11:11:42.356Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "Learn Aws",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 12
+    },
+    {
+      "date": "2023-11-17T11:11:47.743Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "payload": "No Payload",
+      "id": 13
+    },
+    {
+      "date": "2023-11-17T11:11:47.760Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "Learn Aws",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 14
+    },
+    {
+      "date": "2023-11-17T11:11:59.149Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "payload": "No Payload",
+      "id": 15
+    },
+    {
+      "date": "2023-11-17T11:11:59.166Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [],
+      "id": 16
+    },
+    {
+      "date": "2023-11-17T11:12:00.446Z",
+      "action": "ADD_TODO_ITEM",
+      "payload": {
+        "name": "werew",
+        "done": false,
+        "id": 0
+      },
+      "id": 17
+    },
+    {
+      "date": "2023-11-17T11:12:00.455Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "payload": "No Payload",
+      "id": 18
+    },
+    {
+      "date": "2023-11-17T11:12:00.462Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "werew",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 19
+    },
+    {
+      "date": "2023-11-17T11:12:31.432Z",
+      "action": "todo/fetchToDoAsync/pending",
+      "payload": "No Payload",
+      "id": 20
+    },
+    {
+      "date": "2023-11-17T11:12:31.450Z",
+      "action": "todo/fetchToDoAsync/fulfilled",
+      "payload": [
+        {
+          "name": "werew",
+          "done": false,
+          "id": 1
+        }
+      ],
+      "id": 21
+    }
+  ]
 }

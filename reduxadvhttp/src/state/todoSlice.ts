@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-interface ToDoItem {
+export interface ToDoItem {
     id: number;
     name: string;
     done: boolean;
@@ -20,12 +20,16 @@ const todoSlice = createSlice({
     name: "todo",
     initialState,
     reducers: {
-
+        addToDoItem(state, action) {
+            state.items.push(action.payload);
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchToDoAsync.fulfilled, (state, action) => {
             console.log("Data fetched successfully");
-            state.items = [...state.items]
+            console.log(action.payload);
+            state.status = "idle";
+            state.items = action.payload
             
         }).addCase(fetchToDoAsync.pending, (state, action) => {
             state.status = "loading";
@@ -38,11 +42,11 @@ const todoSlice = createSlice({
 });
 
 export const fetchToDoAsync = createAsyncThunk("todo/fetchToDoAsync"
-            ,() =>  async () => 
+            ,async () => 
 {
-     let response = await fetch("http://localhost:8080/todos");
-     let jsonData = await response.json();
-     return jsonData;
+     const response = await fetch("http://localhost:8080/todo");
+     return await response.json();
 });
 
+export const { addToDoItem } = todoSlice.actions;
 export default todoSlice.reducer;
